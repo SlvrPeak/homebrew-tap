@@ -1,0 +1,15 @@
+cask "fastpaste-beta" do
+  version "@VERSION@"
+  sha256 "@DMG_SHA256@"
+
+  url "https://github.com/SlvrPeak/FastPaste-releases/releases/download/@RELEASE_TAG@/@DMG_FILENAME@"
+  name "FastPaste Beta"
+  desc "Beta markdown reader for local files and coding-agent sessions"
+  homepage "https://github.com/SlvrPeak/FastPaste-releases"
+
+  depends_on arch: :arm64
+  depends_on macos: ">= @MINIMUM_MACOS@"
+
+  app "FastPaste Beta.app"
+  binary "#{appdir}/FastPaste Beta.app/Contents/MacOS/fp", target: "fp-beta"
+end
